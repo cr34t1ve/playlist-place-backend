@@ -8,6 +8,10 @@ app()->get('/', function () {
 	response()->page('./welcome.html');
 });
 
+app()->get('/test', function () {
+	response()->json(['test' => 'test']);
+});
+
 app()->group('/playlist', function(){
 	app()->group('/v1', function(){
 
@@ -18,7 +22,7 @@ app()->group('/playlist', function(){
 		});
 
 		app()->get('/getPlaylistNoId', function () {
-			$playlist = db()->select('playlists')->where('id', 1)->fetchObj();
+			$playlist = db()->select('playlists')->where('id', 2)->fetchObj();
 			response()->json($playlist);
 		});
 	});
