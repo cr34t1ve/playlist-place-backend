@@ -16,6 +16,11 @@ app()->group('/playlist', function(){
 			$playlist = db()->select('playlists')->where('id', $id)->fetchObj();
 			response()->json($playlist);
 		});
+
+		app()->get('/getPlaylistNoId', function () {
+			$playlist = db()->select('playlists')->where('id', 1)->fetchObj();
+			response()->json($playlist);
+		});
 	});
 });
 
