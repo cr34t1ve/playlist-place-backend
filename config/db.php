@@ -1,6 +1,6 @@
 <?php
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, '../.env.staging');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ );
 $dotenv->load();
 
 db()->connect([
