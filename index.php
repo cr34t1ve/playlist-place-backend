@@ -31,8 +31,7 @@ app()->group('/playlist', function(){
 		app()->post('/createPlaylist', function(){
 			$playlistDetails = request()->get(["email", "creator_name", "recipient_name", "title", "url", "theme"]);
 			$newPlaylist = db()->insert('playlists')->params($playlistDetails)->execute();
-			$playlistId = db()->select('playlists')->where('id', $newPlaylist->lastInsertId())->fetchObj();
-			response()->json(['success' => true, 'playlistId' => $playlistId], 200, true);
+			response()->json(['success' => true], 200, true);
 		});
 	});
 });
