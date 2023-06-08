@@ -25,6 +25,12 @@ app()->group('/playlist', function(){
 			$playlist = db()->select('playlists')->where('id', 2)->fetchObj();
 			response()->json($playlist);
 		});
+
+		app()->post('/createPlaylist', function(){
+			$playlistDetails = request()->get(["email", "creator_name", "recipient_name", "title", "url", "theme"]);
+			$newPlaylist = db()->insert('playlists')->params($playlistDetails)->execute();
+			response()->json($newPlaylist);
+		});
 	});
 });
 
