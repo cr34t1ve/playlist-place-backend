@@ -9,7 +9,7 @@ app()->get('/', function () {
 });
 
 app()->get('/test', function () {
-	response()->json(['test' => 'test']);
+	response()->json(['test' => 'testing']);
 });
 
 app()->group('/playlist', function(){
