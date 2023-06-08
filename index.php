@@ -3,6 +3,8 @@
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/config/index.php';
 
+app()->cors();
+
 
 app()->get('/', function () {
 	response()->page('./welcome.html');
